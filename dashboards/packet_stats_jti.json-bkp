@@ -16,7 +16,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1626356142190,
+  "id": 6,
+  "iteration": 1529480183742,
   "links": [],
   "panels": [
     {
@@ -176,16 +177,14 @@
         "name": "host_regex",
         "options": [
           {
-            "$$hashKey": "object:541",
             "selected": true,
             "text": "All",
             "value": "$__all"
           },
           {
-            "$$hashKey": "object:542",
             "selected": false,
-            "text": "MIA-MI1-RT06:192.168.203.10",
-            "value": "MIA-MI1-RT06:192.168.203.10"
+            "text": "HL3-1-2_re:10.235.1.2",
+            "value": "HL3-1-2_re:10.235.1.2"
           }
         ],
         "query": "SHOW TAG VALUES WITH KEY = \"device\"",
@@ -196,11 +195,12 @@
         "tags": [],
         "tagsQuery": "",
         "type": "query",
-        "useTags": true
+        "useTags": false
       },
       {
         "allValue": null,
         "current": {
+          "tags": [],
           "text": "All",
           "value": [
             "$__all"
@@ -345,5 +345,5 @@
   "timezone": "",
   "title": "JTI - Packet Statistics",
   "uid": "39ppF5Niz",
-  "version": 1
+  "version": 5
 }

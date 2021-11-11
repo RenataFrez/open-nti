@@ -26,7 +26,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1624284013829,
+  "id": 3,
+  "iteration": 1529581533462,
   "links": [],
   "panels": [
     {
@@ -1041,16 +1042,16 @@
         "name": "host_regex",
         "options": [
           {
-            "$$hashKey": "object:1433",
+            "$$hashKey": "object:3958",
             "selected": true,
             "text": "All",
             "value": "$__all"
           },
           {
-            "$$hashKey": "object:1434",
+            "$$hashKey": "object:3959",
             "selected": false,
-            "text": "MIA-MI1-RT06",
-            "value": "MIA-MI1-RT06"
+            "text": "HL3-1-2_re",
+            "value": "HL3-1-2_re"
           }
         ],
         "query": "SHOW TAG VALUES FROM \"juniperNetworks.cpu_memory_util_ext\" WITH KEY = \"device\"",
@@ -1061,11 +1062,12 @@
         "tags": [],
         "tagsQuery": "",
         "type": "query",
-        "useTags": true
+        "useTags": false
       },
       {
         "allValue": null,
         "current": {
+          "tags": [],
           "text": "All",
           "value": [
             "$__all"
@@ -1079,256 +1081,301 @@
         "name": "app_name",
         "options": [
           {
+            "$$hashKey": "object:923",
             "selected": true,
             "text": "All",
             "value": "$__all"
           },
           {
+            "$$hashKey": "object:924",
+            "selected": false,
+            "text": "(null)",
+            "value": "(null)"
+          },
+          {
+            "$$hashKey": "object:925",
             "selected": false,
             "text": "802-1br",
             "value": "802-1br"
           },
           {
+            "$$hashKey": "object:926",
             "selected": false,
             "text": "agent",
             "value": "agent"
           },
           {
+            "$$hashKey": "object:927",
             "selected": false,
             "text": "class",
             "value": "class"
           },
           {
+            "$$hashKey": "object:928",
             "selected": false,
             "text": "cos",
             "value": "cos"
           },
           {
+            "$$hashKey": "object:929",
             "selected": false,
             "text": "cos-halp",
             "value": "cos-halp"
           },
           {
+            "$$hashKey": "object:930",
             "selected": false,
             "text": "counters",
             "value": "counters"
           },
           {
-            "selected": false,
-            "text": "eagle-chipset",
-            "value": "eagle-chipset"
-          },
-          {
+            "$$hashKey": "object:931",
             "selected": false,
             "text": "features bd_e",
             "value": "features bd_e"
           },
           {
+            "$$hashKey": "object:932",
             "selected": false,
             "text": "features default",
             "value": "features default"
           },
           {
+            "$$hashKey": "object:933",
             "selected": false,
             "text": "features exception",
             "value": "features exception"
           },
           {
+            "$$hashKey": "object:934",
             "selected": false,
             "text": "features iff",
             "value": "features iff"
           },
           {
+            "$$hashKey": "object:935",
             "selected": false,
             "text": "features iif",
             "value": "features iif"
           },
           {
+            "$$hashKey": "object:936",
             "selected": false,
             "text": "features ktree",
             "value": "features ktree"
           },
           {
+            "$$hashKey": "object:937",
             "selected": false,
             "text": "features nh",
             "value": "features nh"
           },
           {
+            "$$hashKey": "object:938",
             "selected": false,
             "text": "features nh ingress",
             "value": "features nh ingress"
           },
           {
+            "$$hashKey": "object:939",
             "selected": false,
             "text": "features off",
             "value": "features off"
           },
           {
+            "$$hashKey": "object:940",
             "selected": false,
             "text": "features oif",
             "value": "features oif"
           },
           {
+            "$$hashKey": "object:941",
             "selected": false,
             "text": "features stream",
             "value": "features stream"
           },
           {
+            "$$hashKey": "object:942",
             "selected": false,
             "text": "filter",
             "value": "filter"
           },
           {
+            "$$hashKey": "object:943",
             "selected": false,
             "text": "filter-halp",
             "value": "filter-halp"
           },
           {
+            "$$hashKey": "object:944",
             "selected": false,
             "text": "fpb",
             "value": "fpb"
           },
           {
+            "$$hashKey": "object:945",
             "selected": false,
             "text": "fpb-syms",
             "value": "fpb-syms"
           },
           {
+            "$$hashKey": "object:946",
             "selected": false,
             "text": "fpdl",
             "value": "fpdl"
           },
           {
+            "$$hashKey": "object:947",
             "selected": false,
             "text": "hash",
             "value": "hash"
           },
           {
+            "$$hashKey": "object:948",
             "selected": false,
             "text": "ifd",
             "value": "ifd"
           },
           {
+            "$$hashKey": "object:949",
             "selected": false,
             "text": "ifd-halp",
             "value": "ifd-halp"
           },
           {
+            "$$hashKey": "object:950",
             "selected": false,
             "text": "iff",
             "value": "iff"
           },
           {
+            "$$hashKey": "object:951",
             "selected": false,
             "text": "iff-halp",
             "value": "iff-halp"
           },
           {
+            "$$hashKey": "object:952",
             "selected": false,
             "text": "ifl",
             "value": "ifl"
           },
           {
+            "$$hashKey": "object:953",
             "selected": false,
             "text": "ifl-halp",
             "value": "ifl-halp"
           },
           {
+            "$$hashKey": "object:954",
             "selected": false,
             "text": "iftable",
             "value": "iftable"
           },
           {
+            "$$hashKey": "object:955",
             "selected": false,
             "text": "igmp",
             "value": "igmp"
           },
           {
+            "$$hashKey": "object:956",
             "selected": false,
             "text": "inline ka",
             "value": "inline ka"
           },
           {
+            "$$hashKey": "object:957",
+            "selected": false,
+            "text": "ipsec",
+            "value": "ipsec"
+          },
+          {
+            "$$hashKey": "object:958",
             "selected": false,
             "text": "ktree",
             "value": "ktree"
           },
           {
+            "$$hashKey": "object:959",
             "selected": false,
             "text": "l2-halp",
             "value": "l2-halp"
           },
           {
+            "$$hashKey": "object:960",
             "selected": false,
             "text": "l2pd-ifd",
             "value": "l2pd-ifd"
           },
           {
+            "$$hashKey": "object:961",
             "selected": false,
             "text": "l2pfd-ifl",
             "value": "l2pfd-ifl"
           },
           {
-            "selected": false,
-            "text": "mdi",
-            "value": "mdi"
-          },
-          {
+            "$$hashKey": "object:962",
             "selected": false,
             "text": "nh",
             "value": "nh"
           },
           {
+            "$$hashKey": "object:963",
             "selected": false,
             "text": "nh-halp",
             "value": "nh-halp"
           },
           {
+            "$$hashKey": "object:964",
             "selected": false,
             "text": "pppoe",
             "value": "pppoe"
           },
           {
+            "$$hashKey": "object:965",
             "selected": false,
             "text": "rt",
             "value": "rt"
           },
           {
+            "$$hashKey": "object:966",
             "selected": false,
             "text": "rt-halp",
             "value": "rt-halp"
           },
           {
+            "$$hashKey": "object:967",
             "selected": false,
             "text": "rt-mac",
             "value": "rt-mac"
           },
           {
+            "$$hashKey": "object:968",
             "selected": false,
             "text": "rtt",
             "value": "rtt"
           },
           {
+            "$$hashKey": "object:969",
             "selected": false,
             "text": "table",
             "value": "table"
           },
           {
+            "$$hashKey": "object:970",
             "selected": false,
             "text": "toe-lu-stats",
             "value": "toe-lu-stats"
           },
           {
-            "selected": false,
-            "text": "toe-pkt-transfer",
-            "value": "toe-pkt-transfer"
-          },
-          {
+            "$$hashKey": "object:971",
             "selected": false,
             "text": "vbf",
             "value": "vbf"
           },
           {
+            "$$hashKey": "object:972",
             "selected": false,
             "text": "vbf-halp",
             "value": "vbf-halp"
@@ -1360,16 +1407,13 @@
         "name": "u_name",
         "options": [
           {
+            "$$hashKey": "object:3839",
             "selected": true,
             "text": "All",
             "value": "$__all"
           },
           {
-            "selected": false,
-            "text": "DMA",
-            "value": "DMA"
-          },
-          {
+            "$$hashKey": "object:3840",
             "selected": false,
             "text": "Kernel",
             "value": "Kernel"

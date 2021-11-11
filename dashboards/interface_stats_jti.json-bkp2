@@ -26,7 +26,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1634926337984,
+  "iteration": 1626378199521,
   "links": [],
   "panels": [
     {
@@ -109,7 +109,7 @@
       "thresholds": [],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Traffic Statistics(Bps) - if_octets",
+      "title": "Traffic Statistics(Bps)",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -323,129 +323,12 @@
       }
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": null,
-      "fill": 1,
-      "gridPos": {
-        "h": 7,
-        "w": 12,
-        "x": 0,
-        "y": 7
-      },
-      "id": 13,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": false,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "connected",
-      "percentage": false,
-      "pointradius": 1,
-      "points": true,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "$$hashKey": "object:278",
-          "alias": "[[tag_device]]-[[tag_interface_stats.if_name]]-$col",
-          "dsType": "influxdb",
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "null"
-              ],
-              "type": "fill"
-            }
-          ],
-          "orderByTime": "ASC",
-          "policy": "default",
-          "query": "SELECT last(\"interface_stats.ingress_stats.if_1sec_octets\")*8 AS \"IN\", last(\"interface_stats.egress_stats.if_1sec_octets\")*8 AS \"OUT\" FROM \"juniperNetworks.jnpr_interface_ext\" WHERE \"device\" =~ /^$host_regex/ AND \"interface_stats.if_name\" =~ /^$if_name$/ AND $timeFilter GROUP BY time($__interval), \"device\", \"interface_stats.if_name\" fill(null)",
-          "rawQuery": true,
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              }
-            ]
-          ],
-          "tags": []
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Traffic Statistics(Bps) - if_1sec_octets",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "Bps",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
       "collapsed": false,
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 14
+        "y": 7
       },
       "id": 10,
       "panels": [],
@@ -464,7 +347,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 15
+        "y": 8
       },
       "id": 3,
       "legend": {
@@ -808,7 +691,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 15
+        "y": 8
       },
       "id": 4,
       "legend": {
@@ -1073,7 +956,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 22
+        "y": 15
       },
       "id": 11,
       "panels": [],
@@ -1092,7 +975,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 23
+        "y": 16
       },
       "id": 6,
       "legend": {
@@ -1207,7 +1090,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 23
+        "y": 16
       },
       "id": 5,
       "legend": {
@@ -1360,7 +1243,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 30
+        "y": 23
       },
       "id": 12,
       "panels": [],
@@ -1379,7 +1262,7 @@
         "h": 7,
         "w": 8,
         "x": 0,
-        "y": 31
+        "y": 24
       },
       "id": 7,
       "legend": {
@@ -1515,7 +1398,7 @@
         "h": 7,
         "w": 8,
         "x": 8,
-        "y": 31
+        "y": 24
       },
       "id": 8,
       "legend": {
@@ -1631,7 +1514,7 @@
         "h": 7,
         "w": 8,
         "x": 16,
-        "y": 31
+        "y": 24
       },
       "id": 9,
       "legend": {
@@ -2028,5 +1911,5 @@
   "timezone": "browser",
   "title": "JTI - Interface statistics",
   "uid": "pjGid5Hmz",
-  "version": 1
+  "version": 8
 }

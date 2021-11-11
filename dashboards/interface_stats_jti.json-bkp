@@ -26,125 +26,22 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1634926337984,
+  "iteration": 1624268416253,
   "links": [],
   "panels": [
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": null,
-      "fill": 1,
+      "collapsed": false,
       "gridPos": {
-        "h": 7,
-        "w": 12,
+        "h": 1,
+        "w": 24,
         "x": 0,
         "y": 0
       },
-      "id": 2,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": false,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "connected",
-      "percentage": false,
-      "pointradius": 1,
-      "points": true,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "$$hashKey": "object:278",
-          "alias": "[[tag_device]]-[[tag_interface_stats.if_name]]-$col",
-          "dsType": "influxdb",
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "null"
-              ],
-              "type": "fill"
-            }
-          ],
-          "orderByTime": "ASC",
-          "policy": "default",
-          "query": "SELECT non_negative_derivative(mean(\"interface_stats.ingress_stats.if_octets\"), 1s)*8 AS \"IN\", non_negative_derivative(mean(\"interface_stats.egress_stats.if_octets\"), 1s)*8 AS \"OUT\" FROM \"juniperNetworks.jnpr_interface_ext\" WHERE \"device\" =~ /^$host_regex/ AND \"interface_stats.if_name\" =~ /^$if_name$/ AND $timeFilter GROUP BY time($__interval), \"device\", \"interface_stats.if_name\" fill(null)",
-          "rawQuery": true,
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              }
-            ]
-          ],
-          "tags": []
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Traffic Statistics(Bps) - if_octets",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "Bps",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
+      "id": 10,
+      "panels": [],
+      "repeat": null,
+      "title": "Interface Statistics",
+      "type": "row"
     },
     {
       "aliasColors": {},
@@ -156,8 +53,8 @@
       "gridPos": {
         "h": 7,
         "w": 12,
-        "x": 12,
-        "y": 0
+        "x": 0,
+        "y": 1
       },
       "id": 1,
       "legend": {
@@ -332,10 +229,10 @@
       "gridPos": {
         "h": 7,
         "w": 12,
-        "x": 0,
-        "y": 7
+        "x": 12,
+        "y": 1
       },
-      "id": 13,
+      "id": 2,
       "legend": {
         "avg": false,
         "current": false,
@@ -359,7 +256,6 @@
       "steppedLine": false,
       "targets": [
         {
-          "$$hashKey": "object:278",
           "alias": "[[tag_device]]-[[tag_interface_stats.if_name]]-$col",
           "dsType": "influxdb",
           "groupBy": [
@@ -376,9 +272,8 @@
               "type": "fill"
             }
           ],
-          "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT last(\"interface_stats.ingress_stats.if_1sec_octets\")*8 AS \"IN\", last(\"interface_stats.egress_stats.if_1sec_octets\")*8 AS \"OUT\" FROM \"juniperNetworks.jnpr_interface_ext\" WHERE \"device\" =~ /^$host_regex/ AND \"interface_stats.if_name\" =~ /^$if_name$/ AND $timeFilter GROUP BY time($__interval), \"device\", \"interface_stats.if_name\" fill(null)",
+          "query": "SELECT non_negative_derivative(mean(\"interface_stats.ingress_stats.if_octets\"), 1s)*8 AS \"IN\", non_negative_derivative(mean(\"interface_stats.egress_stats.if_octets\"), 1s) AS \"OUT\" FROM \"juniperNetworks.jnpr_interface_ext\" WHERE \"device\" =~ /^$host_regex/ AND \"interface_stats.if_name\" =~ /^$if_name$/ AND $timeFilter GROUP BY time($__interval), \"device\", \"interface_stats.if_name\" fill(null)",
           "rawQuery": true,
           "refId": "A",
           "resultFormat": "time_series",
@@ -402,7 +297,7 @@
       "thresholds": [],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Traffic Statistics(Bps) - if_1sec_octets",
+      "title": "Traffic Statistics(Bps)",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -440,20 +335,6 @@
       }
     },
     {
-      "collapsed": false,
-      "gridPos": {
-        "h": 1,
-        "w": 24,
-        "x": 0,
-        "y": 14
-      },
-      "id": 10,
-      "panels": [],
-      "repeat": null,
-      "title": "Interface Statistics",
-      "type": "row"
-    },
-    {
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
@@ -464,7 +345,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 15
+        "y": 8
       },
       "id": 3,
       "legend": {
@@ -808,7 +689,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 15
+        "y": 8
       },
       "id": 4,
       "legend": {
@@ -1068,675 +949,677 @@
       }
     },
     {
-      "collapsed": false,
+      "collapsed": true,
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 22
+        "y": 15
       },
       "id": 11,
-      "panels": [],
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": null,
+          "fill": 1,
+          "gridPos": {
+            "h": 7,
+            "w": 12,
+            "x": 0,
+            "y": 2
+          },
+          "id": 5,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 1,
+          "points": true,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "[[tag_device]]-[[tag_interface_stats.if_name]]-egress-queue:[[tag_interface_stats.egress_queue_info.queue_number]]",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "device"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "interface_stats.egress_queue_info.queue_number"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "interface_stats.if_name"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "null"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "juniperNetworks.jnpr_interface_ext",
+              "policy": "default",
+              "query": "SELECT non_negative_derivative(mean(\"interface_stats.egress_queue_info.packets\"), 1s) FROM \"juniperNetworks.jnpr_interface_ext\" WHERE \"device\" =~ /^$host_regex/ AND \"interface_stats.if_name\" =~ /^$if_name$/ AND \"interface_stats.egress_queue_info.queue_number\" =~ /^$queue$/ AND $timeFilter GROUP BY time($__interval), \"device\", \"interface_stats.egress_queue_info.queue_number\", \"interface_stats.if_name\" fill(null)",
+              "rawQuery": true,
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "interface_stats.egress_queue_info.packets"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  },
+                  {
+                    "params": [
+                      "1s"
+                    ],
+                    "type": "non_negative_derivative"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "device",
+                  "operator": "=~",
+                  "value": "/^$host_regex/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "interface_stats.if_name",
+                  "operator": "=~",
+                  "value": "/^$if_name$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "interface_stats.egress_queue_info.queue_number",
+                  "operator": "=~",
+                  "value": "/^$queue$/"
+                }
+              ]
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Interface Queue Stats (pps)",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "pps",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": null,
+          "fill": 1,
+          "gridPos": {
+            "h": 7,
+            "w": 12,
+            "x": 12,
+            "y": 2
+          },
+          "id": 6,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 1,
+          "points": true,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "[[tag_device]]-[[tag_interface_stats.if_name]]-queue:[[tag_interface_stats.egress_queue_info.queue_number]]",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "null"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "policy": "default",
+              "query": "SELECT non_negative_derivative(mean(\"interface_stats.egress_queue_info.bytes\"), 1s)*8 FROM \"juniperNetworks.jnpr_interface_ext\" WHERE \"device\" =~ /^$host_regex/ AND \"interface_stats.if_name\" =~ /^$if_name$/ AND \"interface_stats.egress_queue_info.queue_number\" =~ /^$queue$/ AND $timeFilter GROUP BY time($__interval), \"device\", \"interface_stats.egress_queue_info.queue_number\", \"interface_stats.if_name\" fill(null)",
+              "rawQuery": true,
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": []
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Interface Queue Stats (Bps)",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "Bps",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        }
+      ],
       "repeat": null,
       "title": "Interface Queue",
       "type": "row"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": null,
-      "fill": 1,
-      "gridPos": {
-        "h": 7,
-        "w": 12,
-        "x": 0,
-        "y": 23
-      },
-      "id": 6,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": false,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "connected",
-      "percentage": false,
-      "pointradius": 1,
-      "points": true,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "alias": "[[tag_device]]-[[tag_interface_stats.if_name]]-queue:[[tag_interface_stats.egress_queue_info.queue_number]]",
-          "dsType": "influxdb",
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "null"
-              ],
-              "type": "fill"
-            }
-          ],
-          "policy": "default",
-          "query": "SELECT non_negative_derivative(mean(\"interface_stats.egress_queue_info.bytes\"), 1s)*8 FROM \"juniperNetworks.jnpr_interface_ext\" WHERE \"device\" =~ /^$host_regex/ AND \"interface_stats.if_name\" =~ /^$if_name$/ AND \"interface_stats.egress_queue_info.queue_number\" =~ /^$queue$/ AND $timeFilter GROUP BY time($__interval), \"device\", \"interface_stats.egress_queue_info.queue_number\", \"interface_stats.if_name\" fill(null)",
-          "rawQuery": true,
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              }
-            ]
-          ],
-          "tags": []
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Interface Queue Stats (Bps)",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "Bps",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": null,
-      "fill": 1,
-      "gridPos": {
-        "h": 7,
-        "w": 12,
-        "x": 12,
-        "y": 23
-      },
-      "id": 5,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": false,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "connected",
-      "percentage": false,
-      "pointradius": 1,
-      "points": true,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "alias": "[[tag_device]]-[[tag_interface_stats.if_name]]-egress-queue:[[tag_interface_stats.egress_queue_info.queue_number]]",
-          "dsType": "influxdb",
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "device"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "interface_stats.egress_queue_info.queue_number"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "interface_stats.if_name"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "null"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "juniperNetworks.jnpr_interface_ext",
-          "policy": "default",
-          "query": "SELECT non_negative_derivative(mean(\"interface_stats.egress_queue_info.packets\"), 1s) FROM \"juniperNetworks.jnpr_interface_ext\" WHERE \"device\" =~ /^$host_regex/ AND \"interface_stats.if_name\" =~ /^$if_name$/ AND \"interface_stats.egress_queue_info.queue_number\" =~ /^$queue$/ AND $timeFilter GROUP BY time($__interval), \"device\", \"interface_stats.egress_queue_info.queue_number\", \"interface_stats.if_name\" fill(null)",
-          "rawQuery": true,
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "interface_stats.egress_queue_info.packets"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              },
-              {
-                "params": [
-                  "1s"
-                ],
-                "type": "non_negative_derivative"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "device",
-              "operator": "=~",
-              "value": "/^$host_regex/"
-            },
-            {
-              "condition": "AND",
-              "key": "interface_stats.if_name",
-              "operator": "=~",
-              "value": "/^$if_name$/"
-            },
-            {
-              "condition": "AND",
-              "key": "interface_stats.egress_queue_info.queue_number",
-              "operator": "=~",
-              "value": "/^$queue$/"
-            }
-          ]
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Interface Queue Stats (pps)",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "pps",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "collapsed": false,
+      "collapsed": true,
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 30
+        "y": 16
       },
       "id": 12,
-      "panels": [],
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": null,
+          "fill": 1,
+          "gridPos": {
+            "h": 7,
+            "w": 8,
+            "x": 0,
+            "y": 3
+          },
+          "id": 7,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 1,
+          "points": true,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "[[tag_device]]-[[tag_interface_stats.if_name]]-queue:[[tag_interface_stats.egress_queue_info.queue_number]]",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [
+                    "device"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "interface_stats.egress_queue_info.queue_number"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "interface_stats.if_name"
+                  ],
+                  "type": "tag"
+                }
+              ],
+              "measurement": "juniperNetworks.jnpr_interface_ext",
+              "policy": "default",
+              "query": "SELECT \"interface_stats.egress_queue_info.avg_buffer_occupancy\" FROM \"juniperNetworks.jnpr_interface_ext\" WHERE \"device\" =~ /^$host_regex/ AND \"interface_stats.if_name\" =~ /^$if_name$/ AND \"interface_stats.egress_queue_info.queue_number\" =~ /^$queue$/ AND $timeFilter GROUP BY \"device\", \"interface_stats.egress_queue_info.queue_number\", \"interface_stats.if_name\"",
+              "rawQuery": true,
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "interface_stats.egress_queue_info.avg_buffer_occupancy"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "device",
+                  "operator": "=~",
+                  "value": "/^$host_regex/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "interface_stats.if_name",
+                  "operator": "=~",
+                  "value": "/^$if_name$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "interface_stats.egress_queue_info.queue_number",
+                  "operator": "=~",
+                  "value": "/^$queue$/"
+                }
+              ]
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Interface Buffer occupancy (average)",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": null,
+          "fill": 1,
+          "gridPos": {
+            "h": 7,
+            "w": 8,
+            "x": 8,
+            "y": 3
+          },
+          "id": 8,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 1,
+          "points": true,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "[[tag_device]]-[[tag_interface_stats.if_name]]-queue:[[tag_interface_stats.egress_queue_info.queue_number]]",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "null"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT \"interface_stats.egress_queue_info.cur_buffer_occupancy\" FROM \"juniperNetworks.jnpr_interface_ext\" WHERE \"device\" =~ /^$host_regex/ AND \"interface_stats.if_name\" =~ /^$if_name$/ AND \"interface_stats.egress_queue_info.queue_number\" =~ /^$queue$/ AND $timeFilter GROUP BY \"device\", \"interface_stats.egress_queue_info.queue_number\", \"interface_stats.if_name\"",
+              "rawQuery": true,
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": []
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Interface Buffer occupancy (current)",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": null,
+          "fill": 1,
+          "gridPos": {
+            "h": 7,
+            "w": 8,
+            "x": 16,
+            "y": 3
+          },
+          "id": 9,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 1,
+          "points": true,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "[[tag_device]]-[[tag_interface_stats.if_name]]-queue:[[tag_interface_stats.egress_queue_info.queue_number]]",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "null"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "policy": "default",
+              "query": "SELECT \"interface_stats.egress_queue_info.peak_buffer_occupancy\" FROM \"juniperNetworks.jnpr_interface_ext\" WHERE \"device\" =~ /^$host_regex/ AND \"interface_stats.if_name\" =~ /^$if_name$/ AND \"interface_stats.egress_queue_info.queue_number\" =~ /^$queue$/ AND $timeFilter GROUP BY \"device\", \"interface_stats.egress_queue_info.queue_number\", \"interface_stats.if_name\"",
+              "rawQuery": true,
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": []
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Interface Buffer occupancy (peak)",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        }
+      ],
       "repeat": null,
       "title": "Interface Buffer",
       "type": "row"
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": null,
-      "fill": 1,
-      "gridPos": {
-        "h": 7,
-        "w": 8,
-        "x": 0,
-        "y": 31
-      },
-      "id": 7,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": false,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "connected",
-      "percentage": false,
-      "pointradius": 1,
-      "points": true,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "alias": "[[tag_device]]-[[tag_interface_stats.if_name]]-queue:[[tag_interface_stats.egress_queue_info.queue_number]]",
-          "dsType": "influxdb",
-          "groupBy": [
-            {
-              "params": [
-                "device"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "interface_stats.egress_queue_info.queue_number"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "interface_stats.if_name"
-              ],
-              "type": "tag"
-            }
-          ],
-          "measurement": "juniperNetworks.jnpr_interface_ext",
-          "policy": "default",
-          "query": "SELECT \"interface_stats.egress_queue_info.avg_buffer_occupancy\" FROM \"juniperNetworks.jnpr_interface_ext\" WHERE \"device\" =~ /^$host_regex/ AND \"interface_stats.if_name\" =~ /^$if_name$/ AND \"interface_stats.egress_queue_info.queue_number\" =~ /^$queue$/ AND $timeFilter GROUP BY \"device\", \"interface_stats.egress_queue_info.queue_number\", \"interface_stats.if_name\"",
-          "rawQuery": true,
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "interface_stats.egress_queue_info.avg_buffer_occupancy"
-                ],
-                "type": "field"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "device",
-              "operator": "=~",
-              "value": "/^$host_regex/"
-            },
-            {
-              "condition": "AND",
-              "key": "interface_stats.if_name",
-              "operator": "=~",
-              "value": "/^$if_name$/"
-            },
-            {
-              "condition": "AND",
-              "key": "interface_stats.egress_queue_info.queue_number",
-              "operator": "=~",
-              "value": "/^$queue$/"
-            }
-          ]
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Interface Buffer occupancy (average)",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": null,
-      "fill": 1,
-      "gridPos": {
-        "h": 7,
-        "w": 8,
-        "x": 8,
-        "y": 31
-      },
-      "id": 8,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": false,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "connected",
-      "percentage": false,
-      "pointradius": 1,
-      "points": true,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "alias": "[[tag_device]]-[[tag_interface_stats.if_name]]-queue:[[tag_interface_stats.egress_queue_info.queue_number]]",
-          "dsType": "influxdb",
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "null"
-              ],
-              "type": "fill"
-            }
-          ],
-          "orderByTime": "ASC",
-          "policy": "default",
-          "query": "SELECT \"interface_stats.egress_queue_info.cur_buffer_occupancy\" FROM \"juniperNetworks.jnpr_interface_ext\" WHERE \"device\" =~ /^$host_regex/ AND \"interface_stats.if_name\" =~ /^$if_name$/ AND \"interface_stats.egress_queue_info.queue_number\" =~ /^$queue$/ AND $timeFilter GROUP BY \"device\", \"interface_stats.egress_queue_info.queue_number\", \"interface_stats.if_name\"",
-          "rawQuery": true,
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              }
-            ]
-          ],
-          "tags": []
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Interface Buffer occupancy (current)",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": null,
-      "fill": 1,
-      "gridPos": {
-        "h": 7,
-        "w": 8,
-        "x": 16,
-        "y": 31
-      },
-      "id": 9,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": false,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "connected",
-      "percentage": false,
-      "pointradius": 1,
-      "points": true,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "alias": "[[tag_device]]-[[tag_interface_stats.if_name]]-queue:[[tag_interface_stats.egress_queue_info.queue_number]]",
-          "dsType": "influxdb",
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "null"
-              ],
-              "type": "fill"
-            }
-          ],
-          "policy": "default",
-          "query": "SELECT \"interface_stats.egress_queue_info.peak_buffer_occupancy\" FROM \"juniperNetworks.jnpr_interface_ext\" WHERE \"device\" =~ /^$host_regex/ AND \"interface_stats.if_name\" =~ /^$if_name$/ AND \"interface_stats.egress_queue_info.queue_number\" =~ /^$queue$/ AND $timeFilter GROUP BY \"device\", \"interface_stats.egress_queue_info.queue_number\", \"interface_stats.if_name\"",
-          "rawQuery": true,
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              }
-            ]
-          ],
-          "tags": []
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Interface Buffer occupancy (peak)",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
     }
   ],
-  "refresh": "5s",
+  "refresh": false,
   "schemaVersion": 16,
   "style": "dark",
   "tags": [
@@ -1786,7 +1669,6 @@
       {
         "allValue": null,
         "current": {
-          "tags": [],
           "text": "All",
           "value": [
             "$__all"
@@ -1800,67 +1682,56 @@
         "name": "if_name",
         "options": [
           {
-            "$$hashKey": "object:147",
             "selected": true,
             "text": "All",
             "value": "$__all"
           },
           {
-            "$$hashKey": "object:148",
             "selected": false,
             "text": "gr-0/0/0",
             "value": "gr-0/0/0"
           },
           {
-            "$$hashKey": "object:149",
             "selected": false,
             "text": "ip-0/0/0",
             "value": "ip-0/0/0"
           },
           {
-            "$$hashKey": "object:150",
             "selected": false,
             "text": "lt-0/0/0",
             "value": "lt-0/0/0"
           },
           {
-            "$$hashKey": "object:151",
             "selected": false,
             "text": "mt-0/0/0",
             "value": "mt-0/0/0"
           },
           {
-            "$$hashKey": "object:152",
             "selected": false,
             "text": "pd-0/0/0",
             "value": "pd-0/0/0"
           },
           {
-            "$$hashKey": "object:153",
             "selected": false,
             "text": "pe-0/0/0",
             "value": "pe-0/0/0"
           },
           {
-            "$$hashKey": "object:154",
             "selected": false,
             "text": "ud-0/0/0",
             "value": "ud-0/0/0"
           },
           {
-            "$$hashKey": "object:155",
             "selected": false,
             "text": "ut-0/0/0",
             "value": "ut-0/0/0"
           },
           {
-            "$$hashKey": "object:156",
             "selected": false,
             "text": "vt-0/0/0",
             "value": "vt-0/0/0"
           },
           {
-            "$$hashKey": "object:157",
             "selected": false,
             "text": "xe-0/1/0",
             "value": "xe-0/1/0"

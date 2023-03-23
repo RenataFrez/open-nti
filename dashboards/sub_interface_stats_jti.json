@@ -16,7 +16,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1656596692351,
+  "iteration": 1626377796997,
   "links": [],
   "panels": [
     {
@@ -27,24 +27,20 @@
       "datasource": null,
       "fill": 1,
       "gridPos": {
-        "h": 8,
-        "w": 24,
+        "h": 9,
+        "w": 12,
         "x": 0,
         "y": 0
       },
       "id": 4,
       "legend": {
-        "alignAsTable": true,
         "avg": false,
-        "current": true,
-        "max": true,
+        "current": false,
+        "max": false,
         "min": false,
-        "rightSide": true,
         "show": true,
-        "sort": "current",
-        "sortDesc": true,
         "total": false,
-        "values": true
+        "values": false
       },
       "lines": true,
       "linewidth": 1,
@@ -227,8 +223,7 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:403",
-          "format": "bps",
+          "format": "Bps",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -236,7 +231,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:404",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -259,23 +253,19 @@
       "fill": 1,
       "gridPos": {
         "h": 9,
-        "w": 24,
-        "x": 0,
-        "y": 8
+        "w": 12,
+        "x": 12,
+        "y": 0
       },
       "id": 2,
       "legend": {
-        "alignAsTable": true,
         "avg": false,
-        "current": true,
-        "max": true,
+        "current": false,
+        "max": false,
         "min": false,
-        "rightSide": true,
         "show": true,
-        "sort": "current",
-        "sortDesc": true,
         "total": false,
-        "values": true
+        "values": false
       },
       "lines": true,
       "linewidth": 1,
@@ -283,7 +273,7 @@
       "nullPointMode": "connected",
       "percentage": false,
       "pointradius": 0.5,
-      "points": false,
+      "points": true,
       "renderer": "flot",
       "seriesOverrides": [],
       "spaceLength": 10,
@@ -291,7 +281,6 @@
       "steppedLine": false,
       "targets": [
         {
-          "$$hashKey": "object:664",
           "alias": "[[tag_device]]-[[tag_interface_info.if_name]]-out",
           "groupBy": [
             {
@@ -359,7 +348,6 @@
           ]
         },
         {
-          "$$hashKey": "object:665",
           "alias": "[[tag_device]]-[[tag_interface_info.if_name]]-IN",
           "groupBy": [
             {
@@ -446,7 +434,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:796",
           "format": "pps",
           "label": null,
           "logBase": 1,
@@ -455,7 +442,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:797",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -484,9 +470,7 @@
         "allValue": null,
         "current": {
           "text": "All",
-          "value": [
-            "$__all"
-          ]
+          "value": "$__all"
         },
         "datasource": "influxdb",
         "hide": 0,
@@ -494,16 +478,29 @@
         "label": null,
         "multi": true,
         "name": "host_regex",
-        "options": [],
+        "options": [
+          {
+            "$$hashKey": "object:1828",
+            "selected": true,
+            "text": "All",
+            "value": "$__all"
+          },
+          {
+            "$$hashKey": "object:1829",
+            "selected": false,
+            "text": "MIA-MI1-RT06:192.168.203.10",
+            "value": "MIA-MI1-RT06:192.168.203.10"
+          }
+        ],
         "query": "SHOW TAG VALUES WITH KEY = \"device\"",
-        "refresh": 1,
+        "refresh": 0,
         "regex": "",
         "sort": 0,
         "tagValuesQuery": "",
         "tags": [],
         "tagsQuery": "",
         "type": "query",
-        "useTags": false
+        "useTags": true
       },
       {
         "allValue": null,
@@ -519,9 +516,105 @@
         "label": null,
         "multi": true,
         "name": "sub_if_name",
-        "options": [],
+        "options": [
+          {
+            "selected": true,
+            "text": "All",
+            "value": "$__all"
+          },
+          {
+            "selected": false,
+            "text": "et-0/0/0.16386",
+            "value": "et-0/0/0.16386"
+          },
+          {
+            "selected": false,
+            "text": "et-0/0/1.16386",
+            "value": "et-0/0/1.16386"
+          },
+          {
+            "selected": false,
+            "text": "et-0/0/2.16386",
+            "value": "et-0/0/2.16386"
+          },
+          {
+            "selected": false,
+            "text": "lt-0/0/0.1",
+            "value": "lt-0/0/0.1"
+          },
+          {
+            "selected": false,
+            "text": "lt-0/0/0.2",
+            "value": "lt-0/0/0.2"
+          },
+          {
+            "selected": false,
+            "text": "lt-0/0/0.32767",
+            "value": "lt-0/0/0.32767"
+          },
+          {
+            "selected": false,
+            "text": "xe-0/1/0.1780",
+            "value": "xe-0/1/0.1780"
+          },
+          {
+            "selected": false,
+            "text": "xe-0/1/0.32767",
+            "value": "xe-0/1/0.32767"
+          },
+          {
+            "selected": false,
+            "text": "xe-0/1/0.43",
+            "value": "xe-0/1/0.43"
+          },
+          {
+            "selected": false,
+            "text": "xe-0/1/0.98",
+            "value": "xe-0/1/0.98"
+          },
+          {
+            "selected": false,
+            "text": "xe-0/1/0.99",
+            "value": "xe-0/1/0.99"
+          },
+          {
+            "selected": false,
+            "text": "xe-0/1/1.16386",
+            "value": "xe-0/1/1.16386"
+          },
+          {
+            "selected": false,
+            "text": "xe-0/1/2.16386",
+            "value": "xe-0/1/2.16386"
+          },
+          {
+            "selected": false,
+            "text": "xe-0/1/3.16386",
+            "value": "xe-0/1/3.16386"
+          },
+          {
+            "selected": false,
+            "text": "xe-0/1/4.16386",
+            "value": "xe-0/1/4.16386"
+          },
+          {
+            "selected": false,
+            "text": "xe-0/1/5.16386",
+            "value": "xe-0/1/5.16386"
+          },
+          {
+            "selected": false,
+            "text": "xe-0/1/6.16386",
+            "value": "xe-0/1/6.16386"
+          },
+          {
+            "selected": false,
+            "text": "xe-0/1/7.16386",
+            "value": "xe-0/1/7.16386"
+          }
+        ],
         "query": "SHOW TAG VALUES FROM \"juniperNetworks.jnprLogicalInterfaceExt\" WITH KEY = \"interface_info.if_name\" WHERE \"device\" =~ /$host_regex/",
-        "refresh": 1,
+        "refresh": 0,
         "regex": "",
         "sort": 0,
         "tagValuesQuery": "",
@@ -585,7 +678,6 @@
   },
   "timepicker": {
     "refresh_intervals": [
-      "2s",
       "5s",
       "10s",
       "30s",
@@ -612,5 +704,5 @@
   "timezone": "",
   "title": "JTI - Sub-Interface Statistics",
   "uid": "bM69c5Nmz",
-  "version": 2
+  "version": 1
 }

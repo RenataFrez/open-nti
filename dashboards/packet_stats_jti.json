@@ -16,7 +16,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1656597500542,
+  "iteration": 1626356142190,
   "links": [],
   "panels": [
     {
@@ -27,22 +27,20 @@
       "datasource": null,
       "fill": 1,
       "gridPos": {
-        "h": 8,
-        "w": 24,
+        "h": 9,
+        "w": 12,
         "x": 0,
         "y": 0
       },
       "id": 2,
       "legend": {
-        "alignAsTable": true,
         "avg": false,
-        "current": true,
-        "max": true,
+        "current": false,
+        "max": false,
         "min": false,
-        "rightSide": true,
         "show": true,
         "total": false,
-        "values": true
+        "values": false
       },
       "lines": true,
       "linewidth": 1,
@@ -50,7 +48,7 @@
       "nullPointMode": "connected",
       "percentage": false,
       "pointradius": 0.5,
-      "points": false,
+      "points": true,
       "renderer": "flot",
       "seriesOverrides": [],
       "spaceLength": 10,
@@ -58,8 +56,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "$$hashKey": "object:198",
-          "alias": "[[tag_device]]-[[tag_packet_stats.name]]",
+          "alias": "[[tag_device]]",
           "groupBy": [
             {
               "params": [
@@ -70,12 +67,6 @@
             {
               "params": [
                 "device"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "packet_stats.name"
               ],
               "type": "tag"
             },
@@ -139,8 +130,7 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:2774",
-          "format": "pps",
+          "format": "short",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -148,7 +138,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:2775",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -185,16 +174,29 @@
         "label": null,
         "multi": true,
         "name": "host_regex",
-        "options": [],
+        "options": [
+          {
+            "$$hashKey": "object:541",
+            "selected": true,
+            "text": "All",
+            "value": "$__all"
+          },
+          {
+            "$$hashKey": "object:542",
+            "selected": false,
+            "text": "MIA-MI1-RT06:192.168.203.10",
+            "value": "MIA-MI1-RT06:192.168.203.10"
+          }
+        ],
         "query": "SHOW TAG VALUES WITH KEY = \"device\"",
-        "refresh": 1,
+        "refresh": 0,
         "regex": "",
         "sort": 0,
         "tagValuesQuery": "",
         "tags": [],
         "tagsQuery": "",
         "type": "query",
-        "useTags": false
+        "useTags": true
       },
       {
         "allValue": null,
@@ -210,9 +212,50 @@
         "label": null,
         "multi": true,
         "name": "stats_name",
-        "options": [],
+        "options": [
+          {
+            "selected": true,
+            "text": "All",
+            "value": "$__all"
+          },
+          {
+            "selected": false,
+            "text": "lts-input-packets",
+            "value": "lts-input-packets"
+          },
+          {
+            "selected": false,
+            "text": "lts-output-packets",
+            "value": "lts-output-packets"
+          },
+          {
+            "selected": false,
+            "text": "lts-sw-input-control-drops",
+            "value": "lts-sw-input-control-drops"
+          },
+          {
+            "selected": false,
+            "text": "lts-sw-input-high-drops",
+            "value": "lts-sw-input-high-drops"
+          },
+          {
+            "selected": false,
+            "text": "lts-sw-input-low-drops",
+            "value": "lts-sw-input-low-drops"
+          },
+          {
+            "selected": false,
+            "text": "lts-sw-input-medium-drops",
+            "value": "lts-sw-input-medium-drops"
+          },
+          {
+            "selected": false,
+            "text": "lts-sw-output-low-drops",
+            "value": "lts-sw-output-low-drops"
+          }
+        ],
         "query": "SHOW TAG VALUES FROM \"juniperNetworks.jnpr_packet_statistics_ext\" WITH KEY = \"packet_stats.name\" WHERE \"device\" =~ /$host_regex/",
-        "refresh": 1,
+        "refresh": 0,
         "regex": "",
         "sort": 0,
         "tagValuesQuery": "",
@@ -276,7 +319,6 @@
   },
   "timepicker": {
     "refresh_intervals": [
-      "2s",
       "5s",
       "10s",
       "30s",
@@ -303,5 +345,5 @@
   "timezone": "",
   "title": "JTI - Packet Statistics",
   "uid": "39ppF5Niz",
-  "version": 3
+  "version": 1
 }

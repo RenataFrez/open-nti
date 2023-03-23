@@ -2,7 +2,7 @@
   "annotations": {
     "list": [
       {
-        "$$hashKey": "object:16156",
+        "$$hashKey": "object:2972",
         "builtIn": 1,
         "datasource": "-- Grafana --",
         "enable": true,
@@ -12,7 +12,7 @@
         "type": "dashboard"
       },
       {
-        "$$hashKey": "object:16157",
+        "$$hashKey": "object:2973",
         "datasource": "influxdb",
         "enable": true,
         "iconColor": "rgba(255, 96, 96, 1)",
@@ -26,7 +26,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1670458121913,
+  "id": 23,
+  "iteration": 1669994608902,
   "links": [],
   "panels": [
     {
@@ -83,7 +84,6 @@
       "steppedLine": false,
       "targets": [
         {
-          "$$hashKey": "object:278",
           "alias": "[[tag_device]]-[[tag_interface_stats.if_name]]-$col",
           "dsType": "influxdb",
           "groupBy": [
@@ -142,8 +142,7 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:1480",
-          "format": "bps",
+          "format": "Bps",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -151,7 +150,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:1481",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -204,7 +202,6 @@
       "steppedLine": false,
       "targets": [
         {
-          "$$hashKey": "object:1636",
           "alias": "[[tag_device]]-[[tag_interface_stats.if_name]]-$col",
           "dsType": "influxdb",
           "groupBy": [
@@ -324,7 +321,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:1605",
           "format": "pps",
           "label": null,
           "logBase": 1,
@@ -333,7 +329,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:1606",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -388,7 +383,6 @@
       "steppedLine": false,
       "targets": [
         {
-          "$$hashKey": "object:2522",
           "alias": "[[tag_device]]-[[tag_interface_stats.if_name]]-$col",
           "dsType": "influxdb",
           "groupBy": [
@@ -748,7 +742,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:2048",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -757,7 +750,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:2049",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -810,7 +802,6 @@
       "steppedLine": false,
       "targets": [
         {
-          "$$hashKey": "object:2287",
           "alias": "[[tag_device]]-[[tag_interface_stats.if_name]]-$col",
           "dsType": "influxdb",
           "groupBy": [
@@ -1097,7 +1088,6 @@
       "steppedLine": false,
       "targets": [
         {
-          "$$hashKey": "object:2231",
           "alias": "[[tag_device]]-[[tag_interface_stats.if_name]]-queue:[[tag_interface_stats.egress_queue_info.queue_number]]",
           "dsType": "influxdb",
           "groupBy": [
@@ -1156,7 +1146,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:3006",
           "format": "Bps",
           "label": null,
           "logBase": 1,
@@ -1165,7 +1154,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:3007",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1392,7 +1380,6 @@
       "steppedLine": false,
       "targets": [
         {
-          "$$hashKey": "object:3179",
           "alias": "[[tag_device]]-[[tag_interface_stats.if_name]]-queue:[[tag_interface_stats.egress_queue_info.queue_number]]",
           "dsType": "influxdb",
           "groupBy": [
@@ -1451,7 +1438,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:3196",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1460,7 +1446,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:3197",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1513,7 +1498,6 @@
       "steppedLine": false,
       "targets": [
         {
-          "$$hashKey": "object:3135",
           "alias": "[[tag_device]]-[[tag_interface_stats.if_name]]-queue:[[tag_interface_stats.egress_queue_info.queue_number]]",
           "dsType": "influxdb",
           "groupBy": [
@@ -1653,7 +1637,6 @@
       "steppedLine": false,
       "targets": [
         {
-          "$$hashKey": "object:3426",
           "alias": "[[tag_device]]-[[tag_interface_stats.if_name]]-queue:[[tag_interface_stats.egress_queue_info.queue_number]]",
           "dsType": "influxdb",
           "groupBy": [
@@ -1712,7 +1695,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:1005",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1721,7 +1703,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:1006",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1788,7 +1769,6 @@
       "steppedLine": false,
       "targets": [
         {
-          "$$hashKey": "object:278",
           "alias": "[[tag_device]]-[[tag_interface_stats.if_name]]-$col",
           "dsType": "influxdb",
           "groupBy": [
@@ -1847,7 +1827,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:1947",
           "format": "bps",
           "label": null,
           "logBase": 1,
@@ -1856,7 +1835,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:1948",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1896,7 +1874,7 @@
         "options": [],
         "query": "SHOW TAG VALUES WITH KEY = \"device\"",
         "refresh": 1,
-        "regex": "/(.*?):.*/",
+        "regex": "/(jmx_sax.*?):.*/",
         "sort": 0,
         "tagValuesQuery": "",
         "tags": [],
@@ -2034,7 +2012,7 @@
     ]
   },
   "timezone": "utc",
-  "title": "JTI - Interface statistics",
-  "uid": "pjGid5Hmz",
-  "version": 7
+  "title": "SAX - JTI - Interface statistics",
+  "uid": "D1J4TcFVz",
+  "version": 1
 }

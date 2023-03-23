@@ -26,7 +26,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1624284013829,
+  "iteration": 1648144331531,
   "links": [],
   "panels": [
     {
@@ -1028,9 +1028,9 @@
       {
         "allValue": null,
         "current": {
-          "text": "All",
+          "text": "MIA-MI1-RT04:198.32.252.34",
           "value": [
-            "$__all"
+            "MIA-MI1-RT04:198.32.252.34"
           ]
         },
         "datasource": "influxdb",
@@ -1039,29 +1039,16 @@
         "label": "Device",
         "multi": true,
         "name": "host_regex",
-        "options": [
-          {
-            "$$hashKey": "object:1433",
-            "selected": true,
-            "text": "All",
-            "value": "$__all"
-          },
-          {
-            "$$hashKey": "object:1434",
-            "selected": false,
-            "text": "MIA-MI1-RT06",
-            "value": "MIA-MI1-RT06"
-          }
-        ],
+        "options": [],
         "query": "SHOW TAG VALUES FROM \"juniperNetworks.cpu_memory_util_ext\" WITH KEY = \"device\"",
-        "refresh": 0,
-        "regex": "/(.*):.*/",
+        "refresh": 1,
+        "regex": "",
         "sort": 0,
         "tagValuesQuery": "",
         "tags": [],
         "tagsQuery": "",
         "type": "query",
-        "useTags": true
+        "useTags": false
       },
       {
         "allValue": null,
@@ -1077,265 +1064,9 @@
         "label": "Application",
         "multi": true,
         "name": "app_name",
-        "options": [
-          {
-            "selected": true,
-            "text": "All",
-            "value": "$__all"
-          },
-          {
-            "selected": false,
-            "text": "802-1br",
-            "value": "802-1br"
-          },
-          {
-            "selected": false,
-            "text": "agent",
-            "value": "agent"
-          },
-          {
-            "selected": false,
-            "text": "class",
-            "value": "class"
-          },
-          {
-            "selected": false,
-            "text": "cos",
-            "value": "cos"
-          },
-          {
-            "selected": false,
-            "text": "cos-halp",
-            "value": "cos-halp"
-          },
-          {
-            "selected": false,
-            "text": "counters",
-            "value": "counters"
-          },
-          {
-            "selected": false,
-            "text": "eagle-chipset",
-            "value": "eagle-chipset"
-          },
-          {
-            "selected": false,
-            "text": "features bd_e",
-            "value": "features bd_e"
-          },
-          {
-            "selected": false,
-            "text": "features default",
-            "value": "features default"
-          },
-          {
-            "selected": false,
-            "text": "features exception",
-            "value": "features exception"
-          },
-          {
-            "selected": false,
-            "text": "features iff",
-            "value": "features iff"
-          },
-          {
-            "selected": false,
-            "text": "features iif",
-            "value": "features iif"
-          },
-          {
-            "selected": false,
-            "text": "features ktree",
-            "value": "features ktree"
-          },
-          {
-            "selected": false,
-            "text": "features nh",
-            "value": "features nh"
-          },
-          {
-            "selected": false,
-            "text": "features nh ingress",
-            "value": "features nh ingress"
-          },
-          {
-            "selected": false,
-            "text": "features off",
-            "value": "features off"
-          },
-          {
-            "selected": false,
-            "text": "features oif",
-            "value": "features oif"
-          },
-          {
-            "selected": false,
-            "text": "features stream",
-            "value": "features stream"
-          },
-          {
-            "selected": false,
-            "text": "filter",
-            "value": "filter"
-          },
-          {
-            "selected": false,
-            "text": "filter-halp",
-            "value": "filter-halp"
-          },
-          {
-            "selected": false,
-            "text": "fpb",
-            "value": "fpb"
-          },
-          {
-            "selected": false,
-            "text": "fpb-syms",
-            "value": "fpb-syms"
-          },
-          {
-            "selected": false,
-            "text": "fpdl",
-            "value": "fpdl"
-          },
-          {
-            "selected": false,
-            "text": "hash",
-            "value": "hash"
-          },
-          {
-            "selected": false,
-            "text": "ifd",
-            "value": "ifd"
-          },
-          {
-            "selected": false,
-            "text": "ifd-halp",
-            "value": "ifd-halp"
-          },
-          {
-            "selected": false,
-            "text": "iff",
-            "value": "iff"
-          },
-          {
-            "selected": false,
-            "text": "iff-halp",
-            "value": "iff-halp"
-          },
-          {
-            "selected": false,
-            "text": "ifl",
-            "value": "ifl"
-          },
-          {
-            "selected": false,
-            "text": "ifl-halp",
-            "value": "ifl-halp"
-          },
-          {
-            "selected": false,
-            "text": "iftable",
-            "value": "iftable"
-          },
-          {
-            "selected": false,
-            "text": "igmp",
-            "value": "igmp"
-          },
-          {
-            "selected": false,
-            "text": "inline ka",
-            "value": "inline ka"
-          },
-          {
-            "selected": false,
-            "text": "ktree",
-            "value": "ktree"
-          },
-          {
-            "selected": false,
-            "text": "l2-halp",
-            "value": "l2-halp"
-          },
-          {
-            "selected": false,
-            "text": "l2pd-ifd",
-            "value": "l2pd-ifd"
-          },
-          {
-            "selected": false,
-            "text": "l2pfd-ifl",
-            "value": "l2pfd-ifl"
-          },
-          {
-            "selected": false,
-            "text": "mdi",
-            "value": "mdi"
-          },
-          {
-            "selected": false,
-            "text": "nh",
-            "value": "nh"
-          },
-          {
-            "selected": false,
-            "text": "nh-halp",
-            "value": "nh-halp"
-          },
-          {
-            "selected": false,
-            "text": "pppoe",
-            "value": "pppoe"
-          },
-          {
-            "selected": false,
-            "text": "rt",
-            "value": "rt"
-          },
-          {
-            "selected": false,
-            "text": "rt-halp",
-            "value": "rt-halp"
-          },
-          {
-            "selected": false,
-            "text": "rt-mac",
-            "value": "rt-mac"
-          },
-          {
-            "selected": false,
-            "text": "rtt",
-            "value": "rtt"
-          },
-          {
-            "selected": false,
-            "text": "table",
-            "value": "table"
-          },
-          {
-            "selected": false,
-            "text": "toe-lu-stats",
-            "value": "toe-lu-stats"
-          },
-          {
-            "selected": false,
-            "text": "toe-pkt-transfer",
-            "value": "toe-pkt-transfer"
-          },
-          {
-            "selected": false,
-            "text": "vbf",
-            "value": "vbf"
-          },
-          {
-            "selected": false,
-            "text": "vbf-halp",
-            "value": "vbf-halp"
-          }
-        ],
+        "options": [],
         "query": "SHOW TAG VALUES FROM \"juniperNetworks.cpu_memory_util_ext\" WITH KEY = \"utilization.application_utilization.name\" WHERE \"device\" =~ /$host_regex/",
-        "refresh": 0,
+        "refresh": 1,
         "regex": "",
         "sort": 0,
         "tagValuesQuery": "",
@@ -1358,25 +1089,9 @@
         "label": null,
         "multi": true,
         "name": "u_name",
-        "options": [
-          {
-            "selected": true,
-            "text": "All",
-            "value": "$__all"
-          },
-          {
-            "selected": false,
-            "text": "DMA",
-            "value": "DMA"
-          },
-          {
-            "selected": false,
-            "text": "Kernel",
-            "value": "Kernel"
-          }
-        ],
+        "options": [],
         "query": "SHOW TAG VALUES FROM \"juniperNetworks.cpu_memory_util_ext\" WITH KEY = \"utilization.name\" WHERE \"device\" =~ /$host_regex/",
-        "refresh": 0,
+        "refresh": 1,
         "regex": "",
         "sort": 0,
         "tagValuesQuery": "",
@@ -1471,5 +1186,5 @@
   "timezone": "browser",
   "title": "JTI - CPU / Memory",
   "uid": "hmW4dcHmk",
-  "version": 1
+  "version": 2
 }

@@ -14,32 +14,34 @@ input-jti:
   links:
    - opennti
 
-input-syslog:
-  image: $INPUT_SYSLOG_IMAGE_NAME:$IMAGE_TAG
-  container_name: $INPUT_SYSLOG_CONTAINER_NAME
-  restart: always
-  environment:
-   - "INFLUXDB_ADDR=opennti"
-   - "OUTPUT_INFLUXDB=true"
-   - "OUTPUT_STDOUT=false"
-  ports:
-   - "$LOCAL_PORT_EVENT:6000/udp"
-  volumes:
-   - /etc/localtime:/etc/localtime
-  links:
-   - opennti
+## Not in use for JTI:
+#input-syslog:
+#  image: $INPUT_SYSLOG_IMAGE_NAME:$IMAGE_TAG
+#  container_name: $INPUT_SYSLOG_CONTAINER_NAME
+#  restart: always
+#  environment:
+#   - "INFLUXDB_ADDR=opennti"
+#   - "OUTPUT_INFLUXDB=true"
+#   - "OUTPUT_STDOUT=false"
+#  ports:
+#   - "$LOCAL_PORT_EVENT:6000/udp"
+#  volumes:
+#   - /etc/localtime:/etc/localtime
+#  links:
+#   - opennti
 
-input-snmp:
-##  image: $INPUT_SNMP_IMAGE_NAME:$IMAGE_TAG
-  build: $INPUT_SNMP_DIR
-  container_name: $INPUT_SNMP_CONTAINER_NAME
-  volumes:
-    - /etc/localtime:/etc/localtime:ro
-    - ./$INPUT_SNMP_DIR/templates/telegraf.tmpl:/data/templates/telegraf.tmpl
-  ports:
-   - "$LOCAL_PORT_SNMP:162/udp"
-  links:
-    - opennti
+## Not in use for JTI:
+#input-snmp:
+###  image: $INPUT_SNMP_IMAGE_NAME:$IMAGE_TAG
+#  build: $INPUT_SNMP_DIR
+#  container_name: $INPUT_SNMP_CONTAINER_NAME
+#  volumes:
+#    - /etc/localtime:/etc/localtime:ro
+#    - ./$INPUT_SNMP_DIR/templates/telegraf.tmpl:/data/templates/telegraf.tmpl
+#  ports:
+#   - "$LOCAL_PORT_SNMP:162/udp"
+#  links:
+#    - opennti
 
 input-internal:
 #  image: $INPUT_INTERNAL_IMAGE_NAME:$IMAGE_TAG
@@ -57,27 +59,31 @@ input-internal:
     - /etc:/rootfs/etc:ro
   links:
     - opennti
-input-oc:
-#  image: $INPUT_OC_IMAGE_NAME:$IMAGE_TAG
-  build: $INPUT_OC_DIR
-  container_name: $INPUT_OC_CONTAINER_NAME
-  volumes:
-    - /etc/localtime:/etc/localtime:ro
-    - ./$INPUT_OC_DIR/telegraf.tmpl:/source/telegraf.tmpl
-  ports:
-    - "$LOCAL_PORT_OC:50051/udp"
-  links:
-    - opennti
-kapacitor:
-    image: kapacitor:1.5.0
-    container_name: kapacitor
-    environment:
-      KAPACITOR_HOSTNAME: $KAPACITOR_CONTAINER_NAME
-      KAPACITOR_INFLUXDB_0_URLS_0: http://opennti_con:8086/
-    ports:
-      - "9092:9092"
-    links:
-      - opennti
+
+### Not in use for JTI:
+#input-oc:
+##  image: $INPUT_OC_IMAGE_NAME:$IMAGE_TAG
+#  build: $INPUT_OC_DIR
+#  container_name: $INPUT_OC_CONTAINER_NAME
+#  volumes:
+#    - /etc/localtime:/etc/localtime:ro
+#    - ./$INPUT_OC_DIR/telegraf.tmpl:/source/telegraf.tmpl
+#  ports:
+#    - "$LOCAL_PORT_OC:50051/udp"
+#  links:
+#    - opennti
+
+### Not in use for JTI:
+#kapacitor:
+#    image: kapacitor:1.5.0
+#    container_name: kapacitor
+#    environment:
+#      KAPACITOR_HOSTNAME: $KAPACITOR_CONTAINER_NAME
+#      KAPACITOR_INFLUXDB_0_URLS_0: http://opennti_con:8086/
+#    ports:
+#      - "9092:9092"
+#    links:
+#      - opennti
 
 chronograf:
     image: quay.io/influxdb/chronograf:1.5.0.1
@@ -108,10 +114,10 @@ opennti:
    - ./$LOCAL_DIR_DB_DATA:/data
    - ./$LOCAL_DIR_DB_VAR:/var/lib/influxdb
    - /etc/localtime:/etc/localtime
+   - ./$LOCAL_DIR_DB_VAR_GRAF:/opt/grafana/data/
   ports:
    - "$LOCAL_PORT_STATSD:8125/udp"
    - "$LOCAL_PORT_NGINX:80"
    - "$LOCAL_PORT_GRAFANA:3000"
    - "$LOCAL_PORT_INFLUXDB:8083"
    - "$LOCAL_PORT_INFLUXDB_API:8086"
-

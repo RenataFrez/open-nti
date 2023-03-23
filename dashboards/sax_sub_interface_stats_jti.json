@@ -16,7 +16,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1656596692351,
+  "id": 12,
+  "iteration": 1670005145509,
   "links": [],
   "panels": [
     {
@@ -497,7 +498,7 @@
         "options": [],
         "query": "SHOW TAG VALUES WITH KEY = \"device\"",
         "refresh": 1,
-        "regex": "",
+        "regex": "/(jmx_sax.*)/",
         "sort": 0,
         "tagValuesQuery": "",
         "tags": [],
@@ -610,7 +611,7 @@
     ]
   },
   "timezone": "",
-  "title": "JTI - Sub-Interface Statistics",
-  "uid": "bM69c5Nmz",
-  "version": 2
+  "title": "SAX - JTI - Sub-Interface Statistics",
+  "uid": "bM69c9Nmz",
+  "version": 3
 }

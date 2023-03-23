@@ -16,7 +16,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1656597500542,
+  "id": 6,
+  "iteration": 1670004816456,
   "links": [],
   "panels": [
     {
@@ -188,7 +189,7 @@
         "options": [],
         "query": "SHOW TAG VALUES WITH KEY = \"device\"",
         "refresh": 1,
-        "regex": "",
+        "regex": "/(jmx_sax.*)/",
         "sort": 0,
         "tagValuesQuery": "",
         "tags": [],
@@ -301,7 +302,7 @@
     ]
   },
   "timezone": "",
-  "title": "JTI - Packet Statistics",
-  "uid": "39ppF5Niz",
-  "version": 3
+  "title": "SAX - JTI - Packet Statistics",
+  "uid": "30ppF5Niz",
+  "version": 4
 }
